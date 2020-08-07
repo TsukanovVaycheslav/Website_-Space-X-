@@ -6,8 +6,14 @@ var instance = new vidbg('.video', {
     overlay: false,         // Логическое для отображения наложения или не 
     // overlayColor: '#000',   // Цвет наложения в виде HEX 
     // overlayAlpha: 0.3       // Альфа наложения. Считайте это последним целым числом в RGBA ()
-  }, {
+}, {
     // Атрибуты 
-  })
+})
 
-  var rellax = new Rellax('.rocket');
+var rellax = new Rellax('.rocket');
+
+  if (document.body.clientWidth < 576) {
+    rellax.destroy();
+  }
+
+  AOS.init(); // Анимация JS
